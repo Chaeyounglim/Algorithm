@@ -2,23 +2,22 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] arr, int[][] queries) {
+        List arrList = Arrays.asList(arr);
+        
         int[] answer = new int[queries.length];
         
-        for(int i=0; i<queries.length; i++){
-            List<Integer> list=new ArrayList();
-            for(int j = queries[i][0]; j<=queries[i][1]; j++){
-                list.add(arr[j]);
-            }
-            Collections.sort(list);
-            for(int k:list){
-                if(k>queries[i][2]){
-                    answer[i]=k;
+        for(int i = 0; i<queries.length; i++){
+            int min = arrList.get(queries[i][0]);
+            int max = arrList.get(queries[i][1]);
+            for(int j = min; j<= max; j++){
+                if(j>arrList.get(queries[i][2])) {
+                    answer[i] = j; 
+                    arrList.remove(arrList.indexOf(j));
                     break;
                 }
             }
-            answer[i] = answer[i]==0 ? -1 : answer[i];
+            
         }
-        
         return answer;
     }
 }
