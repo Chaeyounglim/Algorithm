@@ -6,17 +6,14 @@ class Solution {
         
         int i = 0;
         while(i<arr.length){
-            int index = list.size();
-            if(index==0) 
+            if(list.isEmpty()) 
                 list.add(arr[i++]);
-            else {
-                if(list.get(index-1)<arr[i])
-                    list.add(arr[i++]);
-                else{
-                    list.remove(index-1);
-                }
-            }
+            else if(list.get(list.size()-1)<arr[i])
+                list.add(arr[i++]);
+            else if(list.get(list.size()-1)>=arr[i])
+                list.remove(list.size()-1);
         }
+        
         return list.stream().mapToInt(x->x).toArray();
     }
 }
