@@ -1,13 +1,13 @@
 class Solution {
     public int solution(String number) {
-        int sumResult = 0;
-        int eachSum = 0;
+        return number.chars().map(c->(c-'0')%9).sum()%9;
+            
+//         int eachSum = 0;
         
-        String[] list = number.split("");
-        for(String str : list)
-            eachSum += Integer.parseInt(str);
-        sumResult = eachSum%9;
+//         String[] list = number.split("");
+//         for(String str : list)
+//             eachSum += Integer.parseInt(str);
         
-        return sumResult;
+//         return eachSum%9;
     }
 }

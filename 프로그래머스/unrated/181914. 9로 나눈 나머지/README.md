@@ -1,10 +1,10 @@
 # [level unrated] 9로 나눈 나머지 - 181914 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181914#) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181914) 
 
 ### 성능 요약
 
-메모리: 74.4 MB, 시간: 0.14 ms
+메모리: 72.9 MB, 시간: 1.05 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2023년 11월 4일 12:48:43
+2023년 11월 4일 12:56:25
 
 ### 문제 설명
 
