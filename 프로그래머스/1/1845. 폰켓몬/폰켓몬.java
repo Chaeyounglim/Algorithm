@@ -2,10 +2,17 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] nums) {
-        List<Integer> list = new ArrayList<>();
+        // List<Integer> list = new ArrayList<>();
+        // for(int i : nums){
+        //     if(!list.contains(i)) list.add(i);
+        // }
+        //return Math.min(nums.length/2,list.size());
+        
+        Set<Integer> list = new HashSet<>();
         for(int i : nums){
-            if(!list.contains(i)) list.add(i);
+            list.add(i);
         }
-        return (nums.length/2 < list.size()) ? nums.length/2 : list.size() ;
+
+        return Math.min(nums.length/2,list.size());
     }
 }
