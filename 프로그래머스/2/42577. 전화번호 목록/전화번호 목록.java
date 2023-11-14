@@ -2,14 +2,16 @@ import java.util.*;
 
 class Solution {
     public boolean solution(String[] phone_book) {
-        List<String> list = new ArrayList(Arrays.asList(phone_book));
+        Set<String> setList = new HashSet<>();
         
-        Collections.sort(list);
+        for(String book : phone_book){
+            setList.add(book);
+        }
         
-        for(int i=0; i<list.size()-1;i++){
-            String num1 = list.get(i);
-            String num2 = list.get(i+1);
-            if(num2.startsWith(num1)) return false;
+        for(String book : phone_book){
+            for(int i=1; i<book.length(); i++){
+                if(setList.contains(book.substring(0,i))) return false;
+            }
         }
         return true;
     }
